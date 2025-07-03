@@ -53,4 +53,22 @@ export const products = [
     price: 80,
     image: "https://placehold.co/600x400/navy/white?text=Hoodie",
   },
+  {
+    id: "10",
+    name: "Premium T-Shirt",
+    price: 45,
+    image: "https://placehold.co/600x400/black/white?text=T-Shirt",
+  },
+  {
+    id: "11",
+    name: "Performance Cap", 
+    price: 25,
+    image: "https://placehold.co/600x400/grey/white?text=Cap",
+  },
+  {
+    id: "12",
+    name: "Limited Hoodie",
+    price: 80,
+    image: "https://placehold.co/600x400/navy/white?text=Hoodie",
+  },
 ];

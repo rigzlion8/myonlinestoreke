@@ -1,16 +1,18 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ProductCard({ product }: { product: any }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
-      className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+      className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative aspect-square">
+      {/* Image Container (Smaller + Rounded) */}
+      <div className="relative aspect-[4/3]">
         <img
           src={product.image}
           alt={product.name}
@@ -19,10 +21,16 @@ export default function ProductCard({ product }: { product: any }) {
           }`}
         />
       </div>
-      <div className="p-4">
-        <h3 className="font-medium text-gray-900 dark:text-white">{product.name}</h3>
-        <p className="text-red-600 dark:text-red-400 mt-1">${product.price}</p>
-        <button className="mt-4 w-full bg-black dark:bg-white text-white dark:text-black py-2 rounded">
+
+      {/* Product Info (Tighter Padding) */}
+      <div className="p-3">
+        <h3 className="font-medium text-gray-900 dark:text-white text-sm line-clamp-1">
+          {product.name}
+        </h3>
+        <p className="text-red-600 dark:text-red-400 mt-1 text-lg font-semibold">
+          ${product.price}
+        </p>
+        <button className="mt-3 w-full bg-black dark:bg-white text-white dark:text-black py-1.5 rounded-lg text-sm hover:opacity-90 transition-opacity">
           Add to Cart
         </button>
       </div>
